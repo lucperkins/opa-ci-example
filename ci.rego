@@ -1,3 +1,12 @@
 package ci
 
-default allow = true
+default allow = false
+
+blacklist = {
+    "event-stream"
+}
+
+allow {
+    deps := input.dependencies
+    not deps[x]; blacklist[x]
+}

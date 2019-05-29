@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  compliance_check:
+    docker:
+    - image: openpolicyagent/opa:0.11.0
+    steps:
+    - checkout
+    - run:
+        name: Evaluate
+        command: opa eval
+workflows:
+  version: 2
+  ensure_ci_compliance:
+    jobs:
+    - compliance_check

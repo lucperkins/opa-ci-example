@@ -1,5 +1,9 @@
 #!/bin/bash
 
-ALLOW=$(opa eval --data ci.rego 'data.ci.allow' | jq '.result[0].expressions[0].value')
+ALLOW=$(opa eval --input package.json --data ci.rego --format pretty 'data.ci.allow')
 
-echo "Allowed: ${ALLOW}"
+if [ ${ALLOW} == true ]; then
+    exit 0
+else
+    exit 1
+fi
