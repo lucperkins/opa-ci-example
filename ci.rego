@@ -1,3 +1,3 @@
 package ci
 
-default allow = false
+default allow = true

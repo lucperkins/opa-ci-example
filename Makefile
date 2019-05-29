@@ -1,2 +1,3 @@
-test:
-	opa run --input package.json 'input.dependencies[_]'
+evaluate:
+	@scripts/evaluate.sh
+
