@@ -1,12 +1,21 @@
 package ci
 
+# The package.json is presumed faulty
 default allow = false
 
+# Packages that aren't allowed
 blacklist = {
-    "event-stream"
+    "event-stream",
+    "left-pad"
 }
 
+# Records dependencies that are on the blacklist
+violations[pkg] {
+    input.dependencies[pkg]
+    blacklist[pkg]
+}
+
+# Allow returns true only if there are no violations
 allow {
-    deps := input.dependencies
-    not deps[x]; blacklist[x]
+    count(violations) == 0
 }
