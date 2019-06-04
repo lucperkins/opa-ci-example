@@ -15,7 +15,7 @@ violations[pkg] {
     blacklist[pkg]
 }
 
-# Allow returns true only if there are no violations
+# Returns true only if there are no violations
 allow {
     count(violations) == 0
 }
