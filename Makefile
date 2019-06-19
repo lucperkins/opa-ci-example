@@ -4,3 +4,6 @@ evaluate:
 	--input package.json \
 	--data ci.rego \
 	--format pretty
+
+test:
+	opa test -v ci.rego ci_test.rego
