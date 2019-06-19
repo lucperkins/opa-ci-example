@@ -1,6 +1,6 @@
 workflow "OPA evaluation" {
   on = "push"
-  resolves = ["evaluate"]
+  resolves = ["install"]
 }
 
 action "test" {
