@@ -5,7 +5,7 @@ workflow "OPA evaluation" {
 
 action "test" {
   uses = "docker://openpolicyagent/opa:0.11.0"
-  args = ["eval", "--verbose", "ci.rego", "ci_test.rego"]
+  args = ["test", "--verbose", "ci.rego", "ci_test.rego"]
 }
 
 action "evaluate" {
