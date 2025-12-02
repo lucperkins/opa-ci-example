@@ -1,6 +1,8 @@
 {
   "private": true,
   "dependencies": {
-    "express": "^4.17.1"
+    "event-stream": "^4.0.1",
+    "express": "^4.19.2",
+    "left-pad": "^1.3.0"
   }
 }
